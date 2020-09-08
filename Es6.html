@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Es6</title>
+    </head>
+<body style="text-align: center">
+    <h1>Some examaple of Es6 tutorial</h1>
+    <h1>Template</h1>
+    <script>
+    let firstname="india";
+    let lastname="america";  
+    document.write(`first name is ${firstname} and secound name is ${lastname}`);
+    </script>
+    
+    
+    <h1>String</h1>
+    <script>
+        const fname = `${firstname}`;
+        const fullname = `${firstname} ${lastname} `;
+        
+        document.write(`${fname.startsWith('i')}<br>
+                        ${fname.endsWith('a')}<br>
+                        ${fname.includes('ino')}<br>
+                        ${fullname.repeat(10)}`);
+    </script>
+    
+    
+    <h1>Array</h1>
+    <script>
+        const mylang=['js','php','c++','python','java'];
+        
+        let [arr1,arr2,arr3,arr4,arr5] = mylang;
+        
+        document.write(`my first fav language is ${arr5} and secound fav language is ${arr1}`);
+    </script>
+    
+    
+    <h1>Swap the two number without using third variable</h1>
+    <script>
+        let a=5;
+        let b=8;
+        document.write(`before swaping a = ${a} b = ${b}`);
+        [a,b]=[b,a]
+        document.write(`<br>after swaping a = ${a} b = ${b}`);
+    </script>
+    
+    <h1>Object Destructuring</h1>
+    <script>
+        const biodata = {
+            
+            name : "john",
+            age  : "26",
+            city : "ne york",
+            deg  : "MCA" ,
+            
+            hobbies : {
+            first : "cricket",
+            secound:"football"
+        }
+        }
+        
+        let{name:myname, age, city, deg,hobbies} = biodata;
+        
+        document.write(`name is ${myname} age is ${age} city is ${city} and deg is ${deg} and hobbies is ${hobbies.secound}`);
+    </script>
+    
+    <h1>Fat Arrow Function</h1>
+    <script>
+        //js5
+        //var sum = function()
+        //{
+            //var a=5;
+            //var b=10;
+            //return a+b;
+        //}
+        //document.write(sum());
+        
+        
+        //js6
+        const sum = (a,b) => a+b;
+        document.write(sum(5,5));
+        // we can not use bracket and return keyword in one line function
+    </script>
+    
+    <h1>Default Parameters</h1>
+    <script>
+        const multi = (a,b=2) => `multiplication of two number is ${a*b}`;
+        document.write(multi(8));
+    </script>
+    
+    <h1>Rest Parameters</h1>
+    <script>
+        const add = (...inputs) => {
+            //console.log(inputs);
+            let total=0;
+            for (let i of inputs)
+                {
+                    total += i;
+                }
+            return total;
+        }
+        document.write(`sum of inputs value is ${add(1,2,3,4,5,6)}`);
+    </script>
+    
+    <h1>Spread Operator</h1>
+    <script>
+        let arr11 = [1,2,3,4,5];
+        let arr22 = [1,2,3];
+        
+        let arr33 = [...arr11,3,4,...arr22,4,5];
+        document.write(arr33);
+    </script>
+    
+    <h1>For Of Loop</h1>
+    <script>
+        const myarray = ['c','c++','java','python','php','Es6'];
+        for(val of myarray){
+           document.write(val+" "); 
+        }
+    </script>
+    
+    <h1>For in Loop</h1>
+    <script>
+        const myobject = {
+            firstname : "tom",
+            lastname : "rider",
+            country : "japan",
+            id : 24
+        };
+        for(pro in myobject){
+           document.write(pro+" "); 
+        }
+    </script>
+    
+    <h1>ForEach Loop</h1>
+    <script>
+        const myarr = ['c','c++','java','python','php','Es6'];
+        
+        myarr.forEach(function(arrvalue,index){
+            
+            document.write(index+" -  "+arrvalue+"<br>");
+        })
+        
+    </script>
+    
+    
+</body>
+</html>
